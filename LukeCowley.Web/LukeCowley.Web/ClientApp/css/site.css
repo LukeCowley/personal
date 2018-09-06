@@ -1,66 +1,39 @@
-.main-nav li .glyphicon {
-    margin-right: 10px;
+/****************************Html*/
+
+body{
+    margin: 0px;
 }
 
-/* Highlighting rules for nav menu items */
-.main-nav li a.active,
-.main-nav li a.active:hover,
-.main-nav li a.active:focus {
-    background-color: #4189C7;
-    color: white;
+/****************************Colours*/
+.bg-primary {
+    background-color: #33ccff;
 }
 
-/* Keep the nav menu independent of scrolling and on top of other items */
-.main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
+.bg-secondary {
+    background-color: #333333;
+}
+
+/****************************Header*/
+header .bg-primary {
+    position: relative;
+    width: 125%;
+    height: 8em;
+    -ms-transform: rotate(1deg) translate(-1em, -1em); /* IE 9 */
+    -webkit-transform: rotate(1deg) translate(-1em, -1em); /* Safari */
+    transform: rotate(2deg) translate(-1em, -1em);
+    box-shadow: 0px 5px 100px 5px #ccc;
+}
+
+header .bg-secondary {
+    position: absolute;
+    width: 150%;
+    top: -150px;
     right: 0;
-    z-index: 1;
+    height: 300px;
+    transform-origin: bottom right;
+    transform: rotate(20deg);
+    box-shadow:  0px 5px 100px 2px #aaa;
 }
 
-@media (max-width: 767px) {
-    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
-    body {
-        padding-top: 50px;
-    }
-}
+/****************************Footer*/
 
-@media (min-width: 768px) {
-    /* On small screens, convert the nav menu to a vertical sidebar */
-    .main-nav {
-        height: 100%;
-        width: calc(25% - 20px);
-    }
-    .main-nav .navbar {
-        border-radius: 0px;
-        border-width: 0px;
-        height: 100%;
-    }
-    .main-nav .navbar-header {
-        float: none;
-    }
-    .main-nav .navbar-collapse {
-        border-top: 1px solid #444;
-        padding: 0px;
-    }
-    .main-nav .navbar ul {
-        float: none;
-    }
-    .main-nav .navbar li {
-        float: none;
-        font-size: 15px;
-        margin: 6px;
-    }
-    .main-nav .navbar li a {
-        padding: 10px 16px;
-        border-radius: 4px;
-    }
-    .main-nav .navbar a {
-        /* If a menu item's text is too long, truncate it */
-        width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-}
