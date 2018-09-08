@@ -1,39 +1,267 @@
-/****************************Html*/
-
-body{
-    margin: 0px;
+/****************************Fonts*/
+@font-face {
+    font-family: 'resume';
+    src: url(../../wwwroot/fonts/minya-nouvelle.regular.ttf) format('truetype');
 }
 
+/****************************Html*/
+body {
+    font-family: resume;
+    margin: 0;
+}
+
+.container {
+    margin: auto;
+    overflow: hidden;
+    padding: 0px !important;
+}
+
+
 /****************************Colours*/
-.bg-primary {
+.bg-color-one {
     background-color: #33ccff;
 }
 
-.bg-secondary {
+.bg-color-two {
     background-color: #333333;
 }
 
-/****************************Header*/
-header .bg-primary {
-    position: relative;
-    width: 125%;
-    height: 8em;
-    -ms-transform: rotate(1deg) translate(-1em, -1em); /* IE 9 */
-    -webkit-transform: rotate(1deg) translate(-1em, -1em); /* Safari */
-    transform: rotate(2deg) translate(-1em, -1em);
-    box-shadow: 0px 5px 100px 5px #ccc;
+.bg-color-three {
+    background-color: #00394d;
 }
 
-header .bg-secondary {
-    position: absolute;
-    width: 150%;
-    top: -150px;
-    right: 0;
-    height: 300px;
-    transform-origin: bottom right;
-    transform: rotate(20deg);
-    box-shadow:  0px 5px 100px 2px #aaa;
+.text-color-one {
+    color: #33ccff;
 }
+
+.text-color-two {
+    color: #333333;
+}
+
+.text-color-three {
+    color: #00394d;
+}
+
+/****************************Header*/
+header {
+    position: relative;
+    height: 125px;
+}
+
+    header .bg-color-one {
+        position: absolute;
+        top: -25px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        -ms-transform: rotate(2deg); /* IE 9 */
+        -webkit-transform: rotate(2deg); /* Safari */
+        transform: rotate(2deg);
+        box-shadow: 0px 5px 100px 5px #ccc;
+        z-index: 1;
+    }
+
+    header .bg-color-two {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 200px;
+        transform-origin: top left;
+        -ms-transform: translate(50px, 0px) rotate(-50deg); /* IE 9 */
+        -webkit-transform: translate(50px, 0px) rotate(-50deg); /* Safari */
+        transform: translate(50px, 0px) rotate(-50deg);
+        box-shadow: 0px 5px 100px 2px #aaa;
+        z-index: 2;
+    }
 
 /****************************Footer*/
+footer {
+    width: 100%;
+    position: relative;
+    height: 200px;
+}
 
+
+    footer .bg-color-two {
+        position: absolute;
+        bottom: -50px;
+        left: -25px;
+        height: 200px;
+        width: 65%;
+        -ms-transform: rotate(5deg); /* IE 9 */
+        -webkit-transform: rotate(5deg); /* Safari */
+        transform: rotate(5deg);
+        box-shadow: 0px 5px 100px 5px #ccc;
+        z-index: 2;
+    }
+
+        footer .bg-color-two::after {
+            content: '';
+            height: 150px;
+            position: absolute;
+            right: -500px;
+            width: 500px;
+            transform-origin: top left;
+            -ms-transform: rotate(35deg); /* IE 9 */
+            -webkit-transform: rotate(35deg); /* Safari */
+            transform: rotate(35deg);
+            background-color: inherit;
+            z-index: 2;
+        }
+
+    footer .bg-color-one {
+        position: absolute;
+        bottom: -400px;
+        left: 55%;
+        height: 500px;
+        width: 700px;
+        transform-origin: top left;
+        -ms-transform: rotate(-45deg); /* IE 9 */
+        -webkit-transform: rotate(-45deg); /* Safari */
+        transform: rotate(-25deg);
+        z-index: 1;
+    }
+
+/****************************Content*/
+.layout {
+    position: relative;
+    padding: 10px;
+}
+
+.content-container {
+    background: url(https://www.toptal.com/designers/subtlepatterns/patterns/funky-lines.png);
+    opacity: 0.95;
+}
+
+.splashback {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: visible !important;
+    z-index: -999;
+}
+
+    .splashback::after {
+        background-color: inherit;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        transform: rotate(-1deg);
+        background-color: #00394d;
+    }
+
+.content-body {
+    min-height: 1000px;
+    padding: 0px 50px 0px 75px;
+}
+
+h1.title {
+    position: relative;
+    border-radius: 25px;
+    display: inline-block;
+    color: white;
+    padding: 10px 100px 10px 30px;
+    font-size: 3em;
+    margin: 5px;
+    max-width: 300px;
+    word-spacing: 300px;
+}
+
+    h1.title::before {
+        content: '';
+        position: absolute;
+        width: 75px;
+        height: 20px;
+        bottom: -15px;
+        right: 0px;
+        border-radius: 8px;
+        background-color: inherit;
+    }
+
+    h1.title::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        bottom: -15px;
+        right: -25px;
+        border-radius: 7px;
+        background-color: inherit;
+    }
+
+    h1.title .social-icons {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        bottom: 0;
+        right: 25px;
+        justify-content: space-between;
+        margin: 5% 0;
+    }
+
+        h1.title .social-icons i {
+            font-size: 0.5em;
+            color: white;
+        }
+
+.title-container.collapsed {
+    position: fixed;
+    top: 25px;
+    left: 10px;
+    z-index: 2;
+    margin-left: 15px;
+}
+
+    .title-container.collapsed h1.title {
+        font-size: 1.5em;
+        word-spacing: initial;
+    }
+
+        .title-container.collapsed h1.title::before {
+            display: none;
+        }
+
+        .title-container.collapsed h1.title::after {
+            display: none;
+        }
+            .title-container.collapsed h1.title .social-icons {
+                flex-direction: row;
+            }
+        
+            .title-container.collapsed h1.title .social-icons i {
+                font-size: 0.75em;
+                color: white;
+                margin-left: 5px;
+            }
+    .title-container.collapsed .sub-title {
+        display: none;
+    }
+
+
+.sub-title {
+    margin-left: 150px;
+}
+
+.sticker::after {
+    margin-left: 5%;
+    height: 1px;
+    display: block;
+    width: 50%;
+    background: #33ccff;
+    border-right: 1px white;
+    content: '';
+}
+
+.profile-image {
+    width: 100%;
+    border-radius: 50%;
+    margin-top: 50px;
+    box-shadow: 0px 5px 100px 5px #ccc;
+}
